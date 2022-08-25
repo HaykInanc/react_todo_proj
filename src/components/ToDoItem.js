@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ToDoItem({id, title, done}) {
+export default function ToDoItem({id, title, done, del, change_done}) {
   
   const style={
     display: 'grid',
@@ -12,7 +12,9 @@ export default function ToDoItem({id, title, done}) {
   }
 
   return (
-    <div style={style}>
+    <div style={style} 
+         onDoubleClick={()=>del(id)} 
+         onClick={()=>change_done(id)}>
         <p>id: {id}</p>
         <p>title: {title}</p>
     </div>
